@@ -6,6 +6,10 @@ jobs:
     steps:
       - name: Download repo to runner
         uses: actions/checkout@v6.0.2
+        with:
+          fetch-depth: 0 # fetch all repo commit history to validate which files have changed across commits
 
       - name: Run Super-Linter
         uses: super-linter/super-linter@v8.6.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.MY_TOKEN }} # to display reports on checks on github
