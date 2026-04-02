@@ -1,0 +1,11 @@
+name: Automated code linting and formatting checker
+on: pull_request # trigger workflow when a pull request is [opened, reopened or synchronized]
+jobs:
+  check_code_lint_and_format:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download repo to runner
+        uses: actions/checkout@v6.0.2
+
+      - name: Run Super-Linter
+        uses: super-linter/super-linter@v8.6.0
