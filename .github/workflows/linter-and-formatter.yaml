@@ -1,8 +1,16 @@
 name: Automated code linting and formatting checker
-on: pull_request # trigger workflow when a pull request is [opened, reopened or synchronized]
+on: # yamllint disable-line rule:truthy
+  pull_request # trigger workflow when a pull request is [opened, reopened or synchronized]
+permissions: {}
 jobs:
   check_code_lint_and_format:
     runs-on: ubuntu-latest
+    permissions: 
+      contents: read
+      packages: read
+      issues: write
+      pull-requests: write
+      statuses: write
     steps:
       - name: Download repo to runner
         uses: actions/checkout@v6.0.2
@@ -13,3 +21,4 @@ jobs:
         uses: super-linter/super-linter@v8.6.0
         env:
           GITHUB_TOKEN: ${{ secrets.MY_TOKEN }} # to display reports on checks on github
+          VALIDATE_ALL_CODEBASE: false
