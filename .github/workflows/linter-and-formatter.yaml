@@ -23,6 +23,3 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.MY_TOKEN }} # to display reports on checks on github
           VALIDATE_ALL_CODEBASE: false # check changed files only
-          VALIDATE_BIOME: false
-          VALIDATE_GHA_ZIZMOR: false
-          VALIDATE_HTML_PRETTIER: false
