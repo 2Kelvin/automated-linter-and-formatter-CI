@@ -1,4 +1,4 @@
-name: Automated code linting and formatting checker
+name: Automated code linting and formatting checker using Super-Linter
 on: # yamllint disable-line rule:truthy
   pull_request # trigger workflow when a pull request is [opened, reopened or synchronized]
 permissions: {}
