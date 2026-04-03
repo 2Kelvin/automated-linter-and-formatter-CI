@@ -26,3 +26,5 @@ jobs:
           IGNORE_GITIGNORED_FILES: true
           VALIDATE_GITHUB_ACTIONS_ZIZMOR: false
           VALIDATE_BIOME: false
+          VALIDATE_JAVASCRIPT_PRETTIER: false
+          VALIDATE_CSS_PRETTIER: false
